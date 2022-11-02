@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/icon.png" type="Texture" id=2]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 450, 371 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+x_force = 70.0
+jump_force = 1200.0
+gravity = 70.0
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32, 31, -32 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

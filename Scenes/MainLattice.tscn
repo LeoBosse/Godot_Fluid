@@ -1,0 +1,468 @@
+[gd_scene load_steps=56 format=2]
+
+[ext_resource path="res://Scripts/TileMap.gd" type="Script" id=1]
+[ext_resource path="res://assets/Tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/MainLattice.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/AirTexture.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/SecondaryLattice.gdshader" type="Shader" id=6]
+[ext_resource path="res://Scenes/PrimaryLattice.gdshader" type="Shader" id=7]
+[ext_resource path="res://Scenes/MacroLattice.gdshader" type="Shader" id=8]
+[ext_resource path="res://Scenes/DensityMaterial.tres" type="Material" id=9]
+
+[sub_resource type="ViewportTexture" id=69]
+viewport_path = NodePath("Air/AirTexture/MacroViewport")
+
+[sub_resource type="ViewportTexture" id=70]
+viewport_path = NodePath("Air/AirTexture/MacroViewport2")
+
+[sub_resource type="ViewportTexture" id=71]
+viewport_path = NodePath("Air/AirTexture/PrimaryDirViewport2")
+
+[sub_resource type="ViewportTexture" id=72]
+viewport_path = NodePath("Air/AirTexture/SecondaryDirViewport2")
+
+[sub_resource type="ViewportTexture" id=73]
+viewport_path = NodePath("World/WorldViewport")
+
+[sub_resource type="ShaderMaterial" id=74]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/temperature = 1.0
+shader_param/mass = 1.0
+shader_param/k = 1.0
+shader_param/sound_speed = 1.0
+shader_param/equilibrium_factor = 1.0
+shader_param/primary_dir_lattice = SubResource( 71 )
+shader_param/secondary_dir_lattice = SubResource( 72 )
+shader_param/macro_lattice = SubResource( 70 )
+shader_param/world = SubResource( 73 )
+
+[sub_resource type="ImageTexture" id=52]
+resource_local_to_scene = true
+size = Vector2( 1, 1 )
+
+[sub_resource type="ViewportTexture" id=57]
+viewport_path = NodePath("Air/AirTexture/MacroViewport2")
+
+[sub_resource type="ViewportTexture" id=58]
+viewport_path = NodePath("Air/AirTexture/PrimaryDirViewport2")
+
+[sub_resource type="ViewportTexture" id=59]
+viewport_path = NodePath("Air/AirTexture/SecondaryDirViewport2")
+
+[sub_resource type="ViewportTexture" id=60]
+viewport_path = NodePath("World/WorldViewport")
+
+[sub_resource type="ShaderMaterial" id=80]
+resource_local_to_scene = true
+shader = ExtResource( 7 )
+shader_param/temperature = 1.0
+shader_param/mass = 1.0
+shader_param/k = 1.0
+shader_param/sound_speed = 1.0
+shader_param/equilibrium_factor = 1.0
+shader_param/primary_dir_lattice = SubResource( 58 )
+shader_param/secondary_dir_lattice = SubResource( 59 )
+shader_param/macro_lattice = SubResource( 57 )
+shader_param/world = SubResource( 60 )
+
+[sub_resource type="ViewportTexture" id=61]
+viewport_path = NodePath("Air/AirTexture/MacroViewport2")
+
+[sub_resource type="ViewportTexture" id=62]
+viewport_path = NodePath("Air/AirTexture/PrimaryDirViewport2")
+
+[sub_resource type="ViewportTexture" id=63]
+viewport_path = NodePath("Air/AirTexture/SecondaryDirViewport2")
+
+[sub_resource type="ViewportTexture" id=64]
+viewport_path = NodePath("World/WorldViewport")
+
+[sub_resource type="ShaderMaterial" id=54]
+resource_local_to_scene = true
+shader = ExtResource( 6 )
+shader_param/temperature = 1.0
+shader_param/mass = 1.0
+shader_param/k = 1.0
+shader_param/sound_speed = 1.0
+shader_param/equilibrium_factor = 1.0
+shader_param/primary_dir_lattice = SubResource( 62 )
+shader_param/secondary_dir_lattice = SubResource( 63 )
+shader_param/macro_lattice = SubResource( 61 )
+shader_param/world = SubResource( 64 )
+
+[sub_resource type="ViewportTexture" id=81]
+viewport_path = NodePath("Air/AirTexture/MacroViewport")
+
+[sub_resource type="ViewportTexture" id=82]
+viewport_path = NodePath("Air/AirTexture/PrimaryDirViewport")
+
+[sub_resource type="ViewportTexture" id=83]
+viewport_path = NodePath("Air/AirTexture/SecondaryDirViewport")
+
+[sub_resource type="ViewportTexture" id=84]
+viewport_path = NodePath("World/WorldViewport")
+
+[sub_resource type="ShaderMaterial" id=85]
+resource_local_to_scene = true
+shader = ExtResource( 8 )
+shader_param/temperature = 1.0
+shader_param/mass = 1.0
+shader_param/k = 1.0
+shader_param/sound_speed = 1.0
+shader_param/equilibrium_factor = 1.0
+shader_param/primary_dir_lattice = SubResource( 82 )
+shader_param/secondary_dir_lattice = SubResource( 83 )
+shader_param/macro_lattice = SubResource( 81 )
+shader_param/world = SubResource( 84 )
+
+[sub_resource type="ViewportTexture" id=86]
+viewport_path = NodePath("Air/AirTexture/MacroViewport")
+
+[sub_resource type="ViewportTexture" id=87]
+viewport_path = NodePath("Air/AirTexture/PrimaryDirViewport")
+
+[sub_resource type="ViewportTexture" id=88]
+viewport_path = NodePath("Air/AirTexture/SecondaryDirViewport")
+
+[sub_resource type="ViewportTexture" id=89]
+viewport_path = NodePath("World/WorldViewport")
+
+[sub_resource type="ShaderMaterial" id=90]
+resource_local_to_scene = true
+shader = ExtResource( 7 )
+shader_param/temperature = 1.0
+shader_param/mass = 1.0
+shader_param/k = 1.0
+shader_param/sound_speed = 1.0
+shader_param/equilibrium_factor = 1.0
+shader_param/primary_dir_lattice = SubResource( 87 )
+shader_param/secondary_dir_lattice = SubResource( 88 )
+shader_param/macro_lattice = SubResource( 86 )
+shader_param/world = SubResource( 89 )
+
+[sub_resource type="ViewportTexture" id=91]
+viewport_path = NodePath("Air/AirTexture/MacroViewport")
+
+[sub_resource type="ViewportTexture" id=92]
+viewport_path = NodePath("Air/AirTexture/PrimaryDirViewport")
+
+[sub_resource type="ViewportTexture" id=93]
+viewport_path = NodePath("Air/AirTexture/SecondaryDirViewport")
+
+[sub_resource type="ViewportTexture" id=94]
+viewport_path = NodePath("World/WorldViewport")
+
+[sub_resource type="ShaderMaterial" id=95]
+resource_local_to_scene = true
+shader = ExtResource( 6 )
+shader_param/temperature = 1.0
+shader_param/mass = 1.0
+shader_param/k = 1.0
+shader_param/sound_speed = 1.0
+shader_param/equilibrium_factor = 1.0
+shader_param/primary_dir_lattice = SubResource( 92 )
+shader_param/secondary_dir_lattice = SubResource( 93 )
+shader_param/macro_lattice = SubResource( 91 )
+shader_param/world = SubResource( 94 )
+
+[sub_resource type="Shader" id=100]
+code = "shader_type canvas_item;
+
+uniform sampler2D macro_texture;
+uniform sampler2D world_texture;
+
+
+void fragment(){
+	if (texture(world_texture, UV).a == 0.){
+		float velocity_x = texture(macro_texture, UV).x * 10000.;
+		COLOR = vec4(velocity_x, velocity_x, velocity_x, 1.);
+	}
+	else{
+		COLOR.a = 0.;
+	}
+}"
+
+[sub_resource type="ViewportTexture" id=102]
+viewport_path = NodePath("Air/AirTexture/MacroViewport")
+
+[sub_resource type="ViewportTexture" id=103]
+viewport_path = NodePath("World/WorldViewport")
+
+[sub_resource type="ShaderMaterial" id=101]
+resource_local_to_scene = true
+shader = SubResource( 100 )
+shader_param/macro_texture = SubResource( 102 )
+shader_param/world_texture = SubResource( 103 )
+
+[sub_resource type="Shader" id=105]
+code = "shader_type canvas_item;
+
+uniform sampler2D macro_texture;
+uniform sampler2D world_texture;
+
+
+void fragment(){
+	if (texture(world_texture, UV).a == 0.){
+		float velocity_y = texture(macro_texture, UV).y;
+		COLOR = vec4(velocity_y, velocity_y, velocity_y, 1.);
+	}
+	else{
+		COLOR.a = 0.;
+	}
+}"
+
+[sub_resource type="ViewportTexture" id=106]
+viewport_path = NodePath("Air/AirTexture/MacroViewport")
+
+[sub_resource type="ViewportTexture" id=107]
+viewport_path = NodePath("World/WorldViewport")
+
+[sub_resource type="ShaderMaterial" id=104]
+resource_local_to_scene = true
+shader = SubResource( 105 )
+shader_param/macro_texture = SubResource( 106 )
+shader_param/world_texture = SubResource( 107 )
+
+[sub_resource type="Shader" id=108]
+code = "shader_type canvas_item;
+
+uniform float temperature;
+uniform float mass;
+uniform float k;
+uniform float sound_speed;
+
+uniform float equilibrium_factor;
+
+uniform sampler2D primary_dir_lattice;
+uniform sampler2D secondary_dir_lattice;
+uniform sampler2D macro_lattice;
+uniform sampler2D world;
+
+void fragment(){
+	if (texture(world, UV).a < 0.1){
+//		COLOR = vec4(1.);
+		
+		vec4 pri = texture(primary_dir_lattice, UV);
+		vec4 sec = texture(secondary_dir_lattice, UV);
+		
+		COLOR = vec4(sec.z, 0., 0., 1.);
+//		COLOR = vec4((pri.x + pri.y + pri.z + pri.w)/4.);
+		
+		
+	}
+}"
+
+[sub_resource type="ViewportTexture" id=110]
+viewport_path = NodePath("Air/AirTexture/MacroViewport")
+
+[sub_resource type="ViewportTexture" id=111]
+viewport_path = NodePath("Air/AirTexture/PrimaryDirViewport")
+
+[sub_resource type="ViewportTexture" id=112]
+viewport_path = NodePath("Air/AirTexture/SecondaryDirViewport")
+
+[sub_resource type="ViewportTexture" id=113]
+viewport_path = NodePath("World/WorldViewport")
+
+[sub_resource type="ShaderMaterial" id=109]
+resource_local_to_scene = true
+shader = SubResource( 108 )
+shader_param/temperature = null
+shader_param/mass = null
+shader_param/k = null
+shader_param/sound_speed = null
+shader_param/equilibrium_factor = null
+shader_param/primary_dir_lattice = SubResource( 111 )
+shader_param/secondary_dir_lattice = SubResource( 112 )
+shader_param/macro_lattice = SubResource( 110 )
+shader_param/world = SubResource( 113 )
+
+[node name="MainLattice" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="World" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="WorldViewport" type="Viewport" parent="World"]
+size = Vector2( 1024, 600 )
+transparent_bg = true
+handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
+
+[node name="TileMap" type="TileMap" parent="World/WorldViewport"]
+unique_name_in_owner = true
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+script = ExtResource( 1 )
+
+[node name="Player" parent="World/WorldViewport" instance=ExtResource( 3 )]
+
+[node name="Air" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="ViewportLabel" type="Label" parent="Air"]
+margin_bottom = 14.0
+
+[node name="AirTexture" type="TextureRect" parent="Air"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = SubResource( 69 )
+flip_v = true
+script = ExtResource( 5 )
+equilibrium_factor = 0.0
+
+[node name="MacroViewport" type="Viewport" parent="Air/AirTexture"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="MacroTexture" type="TextureRect" parent="Air/AirTexture/MacroViewport"]
+unique_name_in_owner = true
+material = SubResource( 74 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 52 )
+expand = true
+flip_v = true
+
+[node name="PrimaryDirViewport" type="Viewport" parent="Air/AirTexture"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="PrimaryTexture" type="TextureRect" parent="Air/AirTexture/PrimaryDirViewport"]
+unique_name_in_owner = true
+material = SubResource( 80 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 52 )
+expand = true
+flip_v = true
+
+[node name="SecondaryDirViewport" type="Viewport" parent="Air/AirTexture"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="SecondaryTexture" type="TextureRect" parent="Air/AirTexture/SecondaryDirViewport"]
+unique_name_in_owner = true
+material = SubResource( 54 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 52 )
+expand = true
+flip_v = true
+
+[node name="MacroViewport2" type="Viewport" parent="Air/AirTexture"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="MacroTexture2" type="TextureRect" parent="Air/AirTexture/MacroViewport2"]
+unique_name_in_owner = true
+material = SubResource( 85 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 52 )
+expand = true
+flip_v = true
+
+[node name="PrimaryDirViewport2" type="Viewport" parent="Air/AirTexture"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="PrimaryTexture2" type="TextureRect" parent="Air/AirTexture/PrimaryDirViewport2"]
+unique_name_in_owner = true
+material = SubResource( 90 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 52 )
+expand = true
+flip_v = true
+
+[node name="SecondaryDirViewport2" type="Viewport" parent="Air/AirTexture"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="SecondaryTexture2" type="TextureRect" parent="Air/AirTexture/SecondaryDirViewport2"]
+unique_name_in_owner = true
+material = SubResource( 95 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 52 )
+expand = true
+flip_v = true
+
+[node name="Density" type="Viewport" parent="Air/AirTexture"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="DensityTexture" type="TextureRect" parent="Air/AirTexture/Density"]
+material = ExtResource( 9 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 52 )
+expand = true
+flip_v = true
+
+[node name="VelocityX" type="Viewport" parent="Air/AirTexture"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="VelocityXTexture" type="TextureRect" parent="Air/AirTexture/VelocityX"]
+material = SubResource( 101 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 52 )
+expand = true
+flip_v = true
+
+[node name="VelocityY" type="Viewport" parent="Air/AirTexture"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="VelocityYTexture" type="TextureRect" parent="Air/AirTexture/VelocityY"]
+material = SubResource( 104 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 52 )
+expand = true
+flip_v = true
+
+[node name="Debug" type="Viewport" parent="Air/AirTexture"]
+size = Vector2( 1000, 1000 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="DebugTexture" type="TextureRect" parent="Air/AirTexture/Debug"]
+material = SubResource( 109 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 52 )
+expand = true
+flip_v = true
+
+[connection signal="moved_block" from="World/WorldViewport/Player" to="World/WorldViewport/TileMap" method="_on_Player_moved_block"]

@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[sub_resource type="Shader" id=96]
+code = "shader_type canvas_item;
+
+uniform sampler2D macro_texture;
+uniform sampler2D world_texture;
+
+
+void fragment(){
+	if (texture(world_texture, UV).a < 0.1){
+		float density = texture(macro_texture, UV).z * 1.;
+		COLOR = vec4(density, density, density, 1.);
+	}
+	else{
+		COLOR.a = 0.;
+	}
+}"
+
+[sub_resource type="ViewportTexture" id=98]
+viewport_path = NodePath("Air/AirTexture/MacroViewport")
+
+[sub_resource type="ViewportTexture" id=99]
+viewport_path = NodePath("World/WorldViewport")
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource( 96 )
+shader_param/macro_texture = SubResource( 98 )
+shader_param/world_texture = SubResource( 99 )
